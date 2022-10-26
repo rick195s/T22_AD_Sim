@@ -1,0 +1,3 @@
+[submodule "Assets/ROSMsgs/ackermann_msgs"]
+	path = Assets/ROSMsgs/ackermann_msgs
+	url = https://github.com/ros-drivers/ackermann_msgs
