@@ -236,7 +236,6 @@ GameObject:
   m_Component:
   - component: {fileID: 257663559}
   - component: {fileID: 257663561}
-  - component: {fileID: 257663560}
   - component: {fileID: 257663562}
   m_Layer: 0
   m_Name: depth_camera
@@ -260,14 +259,6 @@ Transform:
   m_Father: {fileID: 607080224}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 180, y: 90, z: 90}
---- !u!81 &257663560
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 257663558}
-  m_Enabled: 1
 --- !u!20 &257663561
 Camera:
   m_ObjectHideFlags: 0
