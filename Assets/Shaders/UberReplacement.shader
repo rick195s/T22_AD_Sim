@@ -16,7 +16,6 @@ Shader "Hidden/UberReplacement" {
 
         fixed4 _ObjectColor;
         fixed4 _CategoryColor;
-        int _OutputMode;
 
         // remap depth: [0 @ eye .. 1 @ far] => [0 @ near .. 1 @ far]
         inline float Linear01FromEyeToLinear01FromNear(float depth01)
@@ -28,17 +27,9 @@ Shader "Hidden/UberReplacement" {
 
         float4 Output(float depth01, float3 normal)
         {
-
-            if (_OutputMode == 2) // DepthCompressed
-            {
-                float linearZFromNear = Linear01FromEyeToLinear01FromNear(depth01);
-                float k = 0.45; // compression factor
-                return pow(linearZFromNear, k);
-            }
-
-
-            // unsupported _OutputMode
-            return float4(1, 0.5, 0.5, 1);
+            float linearZFromNear = Linear01FromEyeToLinear01FromNear(depth01);
+            float k = 0.45; // compression factor
+            return pow(linearZFromNear, k);
         }
         ENDCG
 

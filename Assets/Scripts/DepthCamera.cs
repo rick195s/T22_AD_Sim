@@ -26,7 +26,6 @@ public class DepthCamera : MonoBehaviour
     private void SetupCameraWithReplacementShader(Shader shader, Color clearColor)
     {
         var cb = new CommandBuffer();
-        cb.SetGlobalFloat("_OutputMode", 2);
         camera.AddCommandBuffer(CameraEvent.BeforeForwardOpaque, cb);
         camera.AddCommandBuffer(CameraEvent.BeforeFinalPass, cb);
         camera.SetReplacementShader(shader, "");
