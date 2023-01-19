@@ -2,20 +2,9 @@
 // EncodeDepthNormal() is replaced with custom Output() function
 
 Shader "Hidden/UberReplacement" {
-    Properties {
-        _MainTex ("", 2D) = "white" {}
-        _Cutoff ("", Float) = 0.5
-        _Color ("", Color) = (1,1,1,1)
-
-        _ObjectColor ("Object Color", Color) = (1,1,1,1)
-        _CategoryColor ("Catergory Color", Color) = (0,1,0,1)
-    }
 
     SubShader {
         CGINCLUDE
-
-        fixed4 _ObjectColor;
-        fixed4 _CategoryColor;
 
         // remap depth: [0 @ eye .. 1 @ far] => [0 @ near .. 1 @ far]
         inline float Linear01FromEyeToLinear01FromNear(float depth01)
@@ -36,7 +25,6 @@ Shader "Hidden/UberReplacement" {
         // Support for different RenderTypes
         // The following code is based on builtin Internal-DepthNormalsTexture.shader
 
-        Tags { "RenderType"="Opaque" }
         Pass {
             CGPROGRAM
             #pragma vertex vert
@@ -45,7 +33,6 @@ Shader "Hidden/UberReplacement" {
             struct v2f {
                 float4 pos : SV_POSITION;
                 float4 nz : TEXCOORD0;
-                UNITY_VERTEX_OUTPUT_STEREO
             };
             v2f vert( appdata_base v ) {
                 v2f o;
