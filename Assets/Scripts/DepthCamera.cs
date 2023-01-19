@@ -15,7 +15,6 @@ public class DepthCamera : MonoBehaviour
             uberReplacementShader = Shader.Find("Hidden/UberReplacement");
 
         camera = GetComponent<Camera>();
-        camera.RemoveAllCommandBuffers();
         camera.targetDisplay = 1;
         
         SetupCameraWithReplacementShader(uberReplacementShader, Color.white);
@@ -25,13 +24,8 @@ public class DepthCamera : MonoBehaviour
 
     private void SetupCameraWithReplacementShader(Shader shader, Color clearColor)
     {
-        var cb = new CommandBuffer();
-        camera.AddCommandBuffer(CameraEvent.BeforeForwardOpaque, cb);
-        camera.AddCommandBuffer(CameraEvent.BeforeFinalPass, cb);
         camera.SetReplacementShader(shader, "");
         camera.backgroundColor = clearColor;
         camera.clearFlags = CameraClearFlags.SolidColor;
-        camera.allowHDR = false;
-        camera.allowMSAA = false;
     }
 }
