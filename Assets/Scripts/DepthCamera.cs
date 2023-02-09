@@ -9,7 +9,7 @@ public class DepthCamera : MonoBehaviour
     public Shader uberReplacementShader;
 
     public Shader depthShader;
-    private Camera camera;
+    private new Camera camera;
 
     ROSConnection ros;
     private string cameraInfoTopic = "sensor_msgs";
