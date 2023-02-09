@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638115602052914730
-    m_Hash: 3661061721
+      ticks: 638115609848842092
+    m_Hash: 2472734003
   m_LockFileStatus:
     m_FilePath: D:/Dev/IPL/formula/T22_AD_Sim/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638115602052924737
-    m_Hash: 3760347041
+      ticks: 638115609848726776
+    m_Hash: 1395447285
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -955,28 +955,26 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 1.6.4
     nextVersion: 
-- packageId: com.unity.toolchain.win-x86_64-linux-x86_64@2.0.3
+- packageId: com.unity.toolchain.linux-x86_64@2.0.3
   testable: 0
   isDirectDependency: 1
   version: 2.0.3
   source: 1
-  resolvedPath: D:\Dev\IPL\formula\T22_AD_Sim\Library\PackageCache\com.unity.toolchain.win-x86_64-linux-x86_64@2.0.3
-  assetPath: Packages/com.unity.toolchain.win-x86_64-linux-x86_64
-  name: com.unity.toolchain.win-x86_64-linux-x86_64
-  displayName: Toolchain Win Linux x64
+  resolvedPath: D:\Dev\IPL\formula\T22_AD_Sim\Library\PackageCache\com.unity.toolchain.linux-x86_64@2.0.3
+  assetPath: Packages/com.unity.toolchain.linux-x86_64
+  name: com.unity.toolchain.linux-x86_64
+  displayName: Toolchain Linux x64
   author:
     name: 
     email: 
     url: 
   category: 
   type: asset
-  description: Cross-compilation toolchain to build player target Linux x86_64 on
-    host Windows x86_64
+  description: Toolchain to build player target Linux x86_64 on host Linux x86_64
   status: 4
   errors: []
   versions:
     all:
-    - 0.1.4-preview
     - 0.1.5-preview
     - 0.1.6-preview
     - 0.1.7-preview
@@ -991,8 +989,6 @@ m_ResolvedPackages:
     - 0.1.17-preview
     - 0.1.18-preview
     - 0.1.19-preview
-    - 0.1.20-preview
-    - 0.1.21-preview
     - 1.0.0
     - 2.0.0
     - 2.0.1
@@ -1000,7 +996,6 @@ m_ResolvedPackages:
     - 2.0.3
     - 2.0.4
     compatible:
-    - 0.1.4-preview
     - 0.1.5-preview
     - 0.1.6-preview
     - 0.1.7-preview
@@ -1015,8 +1010,6 @@ m_ResolvedPackages:
     - 0.1.17-preview
     - 0.1.18-preview
     - 0.1.19-preview
-    - 0.1.20-preview
-    - 0.1.21-preview
     - 1.0.0
     - 2.0.0
     - 2.0.1
@@ -1036,9 +1029,7 @@ m_ResolvedPackages:
     version: 2.0.3
   keywords:
   - toolchain
-  - windows
   - linux
-  - cross-compilation
   registry:
     id: main
     name: 
@@ -1048,7 +1039,7 @@ m_ResolvedPackages:
     capabilities: 7
   hideInEditor: 0
   isAssetStorePackage: 0
-  datePublishedTicks: 638036810130000000
+  datePublishedTicks: 638036809710000000
   documentationUrl: 
   hasRepository: 1
   repository:
