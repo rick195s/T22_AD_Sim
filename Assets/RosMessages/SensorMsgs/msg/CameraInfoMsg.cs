@@ -5,12 +5,12 @@ using System.Collections.Generic;
 using System.Text;
 using Unity.Robotics.ROSTCPConnector.MessageGeneration;
 
-namespace RosMessageTypes.DepthCamera
+namespace RosMessageTypes.SensorMsgs
 {
     [Serializable]
     public class CameraInfoMsg : Message
     {
-        public const string k_RosMessageName = "sensor_msgs/CameraInfo";
+        public const string k_RosMessageName = "SensorMsgs/CameraInfo";
         public override string RosMessageName => k_RosMessageName;
 
         public float fov;
@@ -20,10 +20,10 @@ namespace RosMessageTypes.DepthCamera
 
         public CameraInfoMsg()
         {
-            this.fov = 0;
-            this.aspect = 0;
-            this.nearClip = 0;
-            this.farClip = 0;
+            this.fov = 0.0f;
+            this.aspect = 0.0f;
+            this.nearClip = 0.0f;
+            this.farClip = 0.0f;
         }
 
         public CameraInfoMsg(float fov, float aspect, float nearClip, float farClip)
@@ -68,7 +68,7 @@ namespace RosMessageTypes.DepthCamera
 #endif
         public static void Register()
         {
-            //MessageRegistry.Register(k_RosMessageName, Deserialize);
+            MessageRegistry.Register(k_RosMessageName, Deserialize);
         }
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 using Unity.Robotics.ROSTCPConnector;
-using RosMessageTypes.DepthCamera;
+using RosMessageTypes.SensorMsgs;
 
 public class DepthCamera : MonoBehaviour
 {
