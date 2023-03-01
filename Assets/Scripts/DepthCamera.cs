@@ -12,7 +12,7 @@ public class DepthCamera : MonoBehaviour
     private new Camera camera;
 
     ROSConnection ros;
-    private string cameraInfoTopic = "sensor_msgs";
+    private string cameraInfoTopic = "camera_info";
 
     void Start()
     {
@@ -27,8 +27,7 @@ public class DepthCamera : MonoBehaviour
         publishCameraIntrisics();
     }
 
-
-    private void publishCameraIntrisics()
+    private void Update()
     {
         // camera Intrinsics 
         Matrix4x4 projection = camera.projectionMatrix;
@@ -39,11 +38,16 @@ public class DepthCamera : MonoBehaviour
             camera.farClipPlane
         );
 
+        ros.Publish(cameraInfoTopic, cameraIntrinsics);
+    }
 
+    private void publishCameraIntrisics()
+    {
+        
         // publishing camera Intrinsics to sensor_msgs/CameraInfo ROS channel
         ros = ROSConnection.GetOrCreateInstance();
         ros.RegisterPublisher<CameraInfoMsg>(cameraInfoTopic);
-        ros.Publish(cameraInfoTopic, cameraIntrinsics);
+        
     }
 
 

@@ -10,7 +10,7 @@ namespace RosMessageTypes.SensorMsgs
     [Serializable]
     public class CameraInfoMsg : Message
     {
-        public const string k_RosMessageName = "SensorMsgs/CameraInfo";
+        public const string k_RosMessageName = "sensor_msgs/CameraInfo";
         public override string RosMessageName => k_RosMessageName;
 
         public float fov;
