@@ -2,7 +2,7 @@
 // Based on builtin Internal-DepthNormalsTexture.shader
 // EncodeDepthNormal() is replaced with custom Output() function
 
-Shader "Hidden/UberReplacement" {
+Shader "DepthCameraShader" {
 
     // Define the visual appearance of the object. 
     SubShader {
@@ -20,8 +20,9 @@ Shader "Hidden/UberReplacement" {
         float4 Output(float depth01, float3 normal)
         {
             float linearZFromNear = Linear01FromEyeToLinear01FromNear(depth01);
-            
-            float k = 0.45; // compression factor
+            linearZFromNear = 1.0 - linearZFromNear;
+
+            float k = 2; // compression factor
             return pow(linearZFromNear, k);
         }
         ENDCG
